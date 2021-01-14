@@ -15,6 +15,8 @@ import { TimerComponent } from './components/timer/timer.component';
 import { TestService } from './services/test.service';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { UserHomeComponent } from './components/user-home/user-home.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     TestService

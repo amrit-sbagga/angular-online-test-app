@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
 export class TestService {
 
   constructor(private http : HttpClient) {
-    this.getJSON().subscribe(data => {
-      console.log("questions = ", data);
+    // this.getJSON().subscribe(data => {
+    //   console.log("questions = ", data);
       
-      //loadQuestions(data))
-    })
+    //   //loadQuestions(data))
+    // })
    }
 
    getJSON() : Observable<any> {
-    return this.http.get('../assets/questions.json')
+    return this.http.get('../../assets/questions.json')
    }
 
 

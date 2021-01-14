@@ -9,14 +9,14 @@ import { TestService } from '../../services/test.service';
 })
 export class HomeComponent implements OnInit {
 
-  questions
+  questionsList
   constructor(private testService : TestService) { }
 
   ngOnInit(): void {
     //this.questions = this.testService.loadQuestions();
     this.testService.getJSON().subscribe(data => {
       console.log("questions = ", data);
-      this.questions = data;
+      this.questionsList = data;
       //loadQuestions(data))
     })
   }

@@ -4,16 +4,19 @@
             <div><h4>Angular Test</h4></div>
             <div>timer</div>
         </div>
-        <div>
-            <ul class="list-group">
-                <li class="list-group-item active">loop questions through ngfor in ul</li>
-                <li class="list-group-item">for loop option button</li>
-                
+        <div style="margin: 20px;">
+            <ul class="list-group" *ngFor="let que of questionsList">
+                <li class="list-group-item">{{que.id}}. {{que.question}}</li>
+                <li class="list-group-item" *ngFor="let op of que.options">
+                   <div>
+                        <option>({{op.optid}}) {{op.opt}}</option>
+                       
+                   </div>
+                </li>
+                <li class="list-group-item"></li>
             </ul>
         </div>
 
-        <p>
-            {{questions}}
-        </p>
+       
     </div>
 </form>
