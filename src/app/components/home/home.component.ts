@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TestService } from '../../services/test.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  questions
+  constructor(private testService : TestService) { }
 
   ngOnInit(): void {
+    this.questions = this.testService.loadQuestions();
   }
+
+  submitTest(){
+    //calculate test result & route + display in result component
+  }
+
+
+
+
 
 }

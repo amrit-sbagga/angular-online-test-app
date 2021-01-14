@@ -12,6 +12,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ResultComponent } from './components/result/result.component';
 import { TimerComponent } from './components/timer/timer.component';
 
+import { TestService } from './services/test.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,9 @@ import { TimerComponent } from './components/timer/timer.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    TestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
