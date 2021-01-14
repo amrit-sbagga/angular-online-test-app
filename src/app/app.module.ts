@@ -13,6 +13,7 @@ import { ResultComponent } from './components/result/result.component';
 import { TimerComponent } from './components/timer/timer.component';
 
 import { TestService } from './services/test.service';
+import { UserHomeComponent } from './components/user-home/user-home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TestService } from './services/test.service';
     SignupComponent,
     ProfileComponent,
     ResultComponent,
-    TimerComponent
+    TimerComponent,
+    UserHomeComponent
   ],
   imports: [
     BrowserModule,
