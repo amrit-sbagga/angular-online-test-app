@@ -5,23 +5,26 @@
             <app-timer></app-timer>
         </div>
         <div style="margin: auto; width: 60%">
-            <ul class="list-group" *ngFor="let que of questionsList">
+            <ul class="list-group" *ngFor="let que of questionsList; let queindex = index">
                 <li class="list-group-item">{{que.id}}. {{que.question}}</li>
-                <li class="list-group-item" *ngFor="let op of que.options">
+                <li class="list-group-item" *ngFor="let op of que.options;; let optionindex = index">
                     <!-- <select id="quesoptions">
                         <option value="op.optid">({{op.optid}}) {{op.opt}}</option>
                        
                     </select> -->
-                    <div class="radio">  
+                    <div class="radio" style="margin-left: 20px;">  
                         <label>  
-                            <input type="radio" name="op.optid" value="op.opt" ngModel>  
+                            {{op.optid }}
+                            <input type="radio" name="op.optid" value="{{op.opt}}" [(ngModel)]="radioSelected" (change)="onItemChange(op, queindex, optionindex)">  
                             {{op.opt}}  
                         </label>  
                     </div>
                     <!-- <input type="radio" [value]="11">   {{op.opt}} -->
                 </li>
                 <li class="no-bullets">
-                    <div style="height: 30px;"></div>
+                    <div style="height: 30px;">
+                        <h5>{{radioSelectedString}}</h5>
+                    </div>
                 </li>
             </ul>
         </div>
