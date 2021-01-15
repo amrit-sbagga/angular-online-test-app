@@ -1,0 +1,31 @@
+<form (ngSubmit)="submitTest()">
+    <div>
+        <div style="margin: 30px;">
+            <div><h4>Angular Test</h4></div>
+            <app-timer></app-timer>
+        </div>
+        <div style="margin: auto; width: 60%">
+            <ul class="list-group" *ngFor="let que of questionsList">
+                <li class="list-group-item">{{que.id}}. {{que.question}}</li>
+                <li class="list-group-item" *ngFor="let op of que.options">
+                    <!-- <select id="quesoptions">
+                        <option value="op.optid">({{op.optid}}) {{op.opt}}</option>
+                       
+                    </select> -->
+                    <div class="radio">  
+                        <label>  
+                            <input type="radio" name="op.optid" value="op.opt" ngModel>  
+                            {{op.opt}}  
+                        </label>  
+                    </div>
+                    <!-- <input type="radio" [value]="11">   {{op.opt}} -->
+                </li>
+                <li class="no-bullets">
+                    <div style="height: 30px;"></div>
+                </li>
+            </ul>
+        </div>
+
+       
+    </div>
+</form>

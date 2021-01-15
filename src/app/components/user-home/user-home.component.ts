@@ -16,7 +16,7 @@ export class UserHomeComponent implements OnInit {
   enterExam(subject){
     console.log("subject = ", subject);
     
-    this.route.navigate(['/home']);
+    this.route.navigate(['/questionshome']);
   }
 
 }

@@ -16,7 +16,7 @@ export class TestService {
    }
 
    getJSON() : Observable<any> {
-    return this.http.get('../../assets/questions.json')
+    return this.http.get('../../assets/questions-angular.json')
    }
 
 

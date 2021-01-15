@@ -4,10 +4,10 @@ import { TestService } from '../../services/test.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './questions-home.component.html',
+  styleUrls: ['./questions-home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class QuestionsHomeComponent implements OnInit {
 
   questionsList
   constructor(private testService : TestService) { }
