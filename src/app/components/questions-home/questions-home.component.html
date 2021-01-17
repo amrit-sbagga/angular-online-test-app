@@ -15,7 +15,7 @@
                     <div class="radio" style="margin-left: 10px;">  
                         <label [for]="queindex + optionindex">  
                             {{option.optid }} &nbsp;&nbsp;
-                            <input type="radio" 
+                            <input type="radio" required
                                  name="{{que.id}}{{option.optid}}" 
                                  value="{{option.optid}}"             
                                  [(ngModel)]="que.userRadioSelected"
@@ -36,7 +36,7 @@
         </div>
 
         <input style="float: right; margin-right: 20px;margin-bottom: 50px;" class="btn btn-primary" 
-              [disabled]="onlinetestForm.invalid "type="submit" value="Submit"/>
+              [disabled]="onlinetestForm.form.invalid "type="submit" value="Submit"/>
     </div>
     <div style="margin-top: 20x;">
        
