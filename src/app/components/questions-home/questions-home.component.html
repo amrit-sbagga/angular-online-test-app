@@ -14,7 +14,7 @@
                     </select> -->
                     <div class="radio" style="margin-left: 20px;">  
                         <label>  
-                            {{op.optid }}
+                            {{op.optid }} &nbsp;&nbsp;
                             <input type="radio" name="op.optid" value="{{op.opt}}" [(ngModel)]="radioSelected" (change)="onItemChange(op, queindex, optionindex)">  
                             {{op.opt}}  
                         </label>  
