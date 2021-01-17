@@ -13,7 +13,16 @@ export class QuestionsHomeComponent implements OnInit {
   radioSelectedString:string;
   radioSel:any = '';
 
+  answers: string[];
+  selectedAnswer: string;
+
   questionsList
+
+  options: any = [];
+  option: any = [];
+
+  //onlinetestForm = 
+
   constructor(private testService : TestService) { }
 
   ngOnInit(): void {
@@ -23,6 +32,10 @@ export class QuestionsHomeComponent implements OnInit {
       this.questionsList = data;
       //loadQuestions(data))
     })
+  }
+
+  selectAnswer(ans: string) {
+    this.selectedAnswer = ans; 
   }
 
   //https://www.freakyjolly.com/how-to-show-radio-input-listing-in-angular-6/#.YAHjKugzZPY
@@ -35,9 +48,9 @@ export class QuestionsHomeComponent implements OnInit {
    
     //todo - check undefined for radiosel
     this.radioSel = this.questionsList[queindex].options.find(Item => {
-      console.log("Item =", Item)
-      console.log("Item radioSelected=", this.radioSelected)
-      Item.optid === this.radioSelected
+      //console.log("Item =", Item)
+      //console.log("Item radioSelected=", this.radioSelected)
+      return Item.optid === this.radioSelected
     });
 
     console.log("radioSel = ", this.radioSel);
@@ -51,8 +64,9 @@ export class QuestionsHomeComponent implements OnInit {
     this.getSelecteditem(queindex, optionindex);
   }
 
-  submitTest(){
+  submitTest(data){
     //calculate test result & route + display in result component
+    console.log('Data entered in online test form : ', JSON.stringify(data))
   }
 
 
