@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { TestService } from '../../services/test.service';
 
@@ -13,17 +14,17 @@ export class QuestionsHomeComponent implements OnInit {
   radioSelectedString:string;
   radioSel:any = '';
 
-  answers: string[];
-  selectedAnswer: string;
+ // answers: string[];
+  //selectedAnswer: string;
 
   questionsList
 
-  options: any = [];
-  option: any = [];
+  //options: any = [];
+  //option: any = [];
 
   //onlinetestForm = 
 
-  constructor(private testService : TestService) { }
+  constructor(private testService : TestService, private route: Router) { }
 
   ngOnInit(): void {
     //this.questions = this.testService.loadQuestions();
@@ -34,9 +35,9 @@ export class QuestionsHomeComponent implements OnInit {
     })
   }
 
-  selectAnswer(ans: string) {
-    this.selectedAnswer = ans; 
-  }
+  // selectAnswer(ans: string) {
+  //   this.selectedAnswer = ans; 
+  // }
 
   //https://www.freakyjolly.com/how-to-show-radio-input-listing-in-angular-6/#.YAHjKugzZPY
 
@@ -66,7 +67,9 @@ export class QuestionsHomeComponent implements OnInit {
 
   submitTest(data){
     //calculate test result & route + display in result component
-    console.log('Data entered in online test form : ', JSON.stringify(data))
+    console.log('Data entered in online test form : ', data)
+    //console.log('Data entered in online test form : ', JSON.stringify(data))
+   // this.route.navigate(['/results'])
   }
 
 

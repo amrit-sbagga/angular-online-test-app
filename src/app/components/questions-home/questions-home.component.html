@@ -1,4 +1,4 @@
-<form (ngSubmit)="onlinetestForm.valid && submitTest(onlinetestForm.value)" #onlinetestForm="ngForm">
+<form (ngSubmit)="submitTest(onlinetestForm.value)" #onlinetestForm="ngForm">
     <div style="margin-bottom: 20x;">
         <div style="margin: 30px;">
             <div><h4>Angular Test</h4></div>
@@ -13,15 +13,13 @@
                        
                     </select> -->
                     <div class="radio" style="margin-left: 10px;">  
-                        <label>  
+                        <label [for]="queindex + optionindex">  
                             {{option.optid }} &nbsp;&nbsp;
-                            <input type="radio" id="{{queindex}}-{{optionindex}}" name="que[option.optid]" 
-                                 value="{{que.id}}-{{option.optid}}" [(ngModel)]="radioSelected"
-                                 [checked]="que[option.optid]">
-                                 <!-- (ngModelChange)="onItemChange(op, queindex, optionindex)"> -->
-                            <!-- <input [(ngModel)]="option[que.id]" [checked]="option[que.id]" 
-                                value="{{que.id}}-{{option.id}}" type="radio"
-                                 name="option{{que.id}}"> -->
+                            <input type="radio" 
+                                 name="{{que.id}}{{option.optid}}" 
+                                 value="{{option.optid}}"             
+                                 [(ngModel)]="que.userRadioSelected"
+                                 >
                             &nbsp;&nbsp;<em>{{option.opt}}</em>  
                         </label>  
 
@@ -31,7 +29,7 @@
                 </li>
                 <li class="no-bullets">
                     <div style="height: 30px;">
-                        <h5>{{radioSelectedString}}</h5>
+                        <h5>{{que.userRadioSelected}}</h5>
                     </div>
                 </li>
             </ul>
