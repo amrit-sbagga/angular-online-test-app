@@ -11,7 +11,10 @@
           <tr>
             <th scope="row">1</th>
             <td>ANGULAR</td>
-            <td><button (click)="enterExam('ANGULAR')">Enter Exam</button></td>
+            <td>
+               <button class="btn btn-outline-primary mb-2 mr-2" (click)="open(content)">Enter Exam</button>
+            </td>
+            <!-- <td><button (click)="enterExam('ANGULAR')">Enter Exam</button></td> -->
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -44,5 +47,33 @@
             <td><button (click)="enterExam('AZURE')">Enter Exam</button></td>
           </tr>
         </tbody>
-      </table>
+    </table>
+
+
+    <ng-template #content let-modal>
+          <div class="modal-header"> 
+            <h4 class="modal-title" id="modal-basic-title"> 
+                Online Test 
+            </h4> 
+            <button type="button" class="close"
+                    aria-label="Close" (click)= 
+                    "modal.dismiss('Cross click')"> 
+      
+                <span aria-hidden="true"> 
+                    × 
+                </span> 
+            </button> 
+        </div> 
+         <div class="modal-body"> 
+            <h3>body text here........</h3>
+            content
+        </div>
+          <div class="modal-footer"> 
+            <button type="button" 
+                class="btn btn-outline-dark" 
+                (click)="modal.close('Save click')"> 
+                Start 
+            </button> 
+        </div>
+    </ng-template>
 </div>
