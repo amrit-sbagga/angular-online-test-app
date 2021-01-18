@@ -20,6 +20,7 @@ import { UserHomeComponent } from './components/user-home/user-home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReviewAnswersComponent } from './components/review-answers/review-answers.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { ReviewAnswersComponent } from './components/review-answers/review-answe
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
-    }), // ToastrModule added
+    }), NgbModule, // ToastrModule added
   ],
   providers: [
     TestService
