@@ -7,6 +7,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { ResultComponent } from './components/result/result.component';
+import { ReviewAnswersComponent } from './components/review-answers/review-answers.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:"results",
     component: ResultComponent
+  },
+  {
+    path : "reviewAnswers",
+    component: ReviewAnswersComponent
   }
 
 ];
