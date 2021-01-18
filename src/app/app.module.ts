@@ -16,6 +16,7 @@ import { TestService } from './services/test.service';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ReviewAnswersComponent } from './components/review-answers/review-answers.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     ResultComponent,
     TimerComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    ReviewAnswersComponent
   ],
   imports: [
     BrowserModule,
