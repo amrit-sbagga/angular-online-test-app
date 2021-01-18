@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TestService } from '../../services/test.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TestService } from '../../services/test.service';
 export class ReviewAnswersComponent implements OnInit {
 
   questionsList
-  constructor(private testService : TestService) { }
+  constructor(private testService : TestService, private route: Router) { }
 
   ngOnInit(): void {
 
@@ -18,6 +19,14 @@ export class ReviewAnswersComponent implements OnInit {
       this.questionsList = data;
       //loadQuestions(data))
     })
+  }
+
+  goToHome(){
+    this.route.navigate(['/userHome'])
+  }
+
+  goBack(){
+    this.route.navigate(['/results'])
   }
 
 }

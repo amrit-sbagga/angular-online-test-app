@@ -16,8 +16,8 @@ export class ResultComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       //this.name = params['name'];
       console.log("params = ", params);
-      this.correctCount = params.correctCount;
-      this.totalQueCount = params.totalQueCount;
+      this.correctCount = params.correctCount || 0;
+      this.totalQueCount = params.totalQueCount || 0;
     });
 
    // const firstParam: string = this.route.snapshot.queryParamMap.get('correctCount');

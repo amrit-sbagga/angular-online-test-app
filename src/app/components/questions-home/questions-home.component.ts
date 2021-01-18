@@ -92,10 +92,6 @@ export class QuestionsHomeComponent implements OnInit {
    
   }
 
- 
     userRadioSelected : ""
-
-
-
 
 }
