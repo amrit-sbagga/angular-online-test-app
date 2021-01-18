@@ -2,11 +2,14 @@
     <h3><font color="blue">Thank you for taking the test!!</font></h3>
     <h4><font color="green">You have scored : <em>{{correctCount}} / {{totalQueCount}}</em></font></h4>
     <br>
-    <div style="float: right">
-        <a routerLink="/userhome" routerLinkActive="true">Try again</a>
+    <div style="float: left">
+        <!-- <a routerLink="/userhome" routerLinkActive="true">Try again</a> OR
+        <a routerLink="/reviewAnswers" routerLinkActive="true">Review answers</a> -->
+
+        <button (click)="tryAgain()">Try again</button> OR
+        <button (click)="reviewAnswers()">Review answers</button>
+       
     </div>
    <br>
-    <div style="float: right">
-        <a routerLink="/reviewAnswers" routerLinkActive="true">Review answers</a>
-    </div>
+    
 </div>

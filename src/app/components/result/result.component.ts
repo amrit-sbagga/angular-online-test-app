@@ -10,7 +10,7 @@ export class ResultComponent implements OnInit {
 
   correctCount = 0;
   totalQueCount = 0;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -23,6 +23,14 @@ export class ResultComponent implements OnInit {
    // const firstParam: string = this.route.snapshot.queryParamMap.get('correctCount');
    // console.log(firstParam);
     
+  }
+
+  tryAgain(){
+    this.router.navigate(['/userhome']);
+  }
+
+  reviewAnswers(){
+    this.router.navigate(['/reviewAnswers'], { queryParams : { questionList : []}});
   }
 
 }

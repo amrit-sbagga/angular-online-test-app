@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestService } from '../../services/test.service';
 
 @Component({
   selector: 'app-review-answers',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewAnswersComponent implements OnInit {
 
-  constructor() { }
+  questionsList
+  constructor(private testService : TestService) { }
 
   ngOnInit(): void {
+
+    this.testService.getJSON().subscribe(data => {
+      console.log("questions = ", data);
+      this.questionsList = data;
+      //loadQuestions(data))
+    })
   }
 
 }
