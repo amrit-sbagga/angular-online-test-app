@@ -75,7 +75,8 @@ export class QuestionsHomeComponent implements OnInit {
    let correctCount = 0;
 
    // console.log('questionsList size =  ', this.questionsList.length)
-    for (let queIdx=0; queIdx < this.questionsList.length; queIdx++){
+    let totalQueCount = this.questionsList.length;
+    for (let queIdx=0; queIdx < totalQueCount; queIdx++){
       let ansId = ""+(queIdx+1) + "a";
       console.log('Data entered in online test form : ', data[ansId] ) ;//data[])
 
@@ -86,7 +87,7 @@ export class QuestionsHomeComponent implements OnInit {
       
     }
    // console.log('Data entered in online test form : ', JSON.stringify(data))
-   // this.route.navigate(['/results'])
+     this.route.navigate(['/results'], { queryParams: {correctCount, totalQueCount}})
 
    
   }
