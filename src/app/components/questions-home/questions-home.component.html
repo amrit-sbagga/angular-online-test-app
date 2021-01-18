@@ -13,8 +13,8 @@
                        
                     </select> -->
                     <div class="radio" style="margin-left: 10px;">  
-                        <label [for]="queindex + optionindex">  
-                            {{option.optid }} &nbsp;&nbsp;
+                        <label> <!-- <label> [for]="queindex + optionindex">     -->
+                            <!-- {{option.optid }} &nbsp;&nbsp; -->
                             <input type="radio" required
                                  name="{{que.id}}{{option.optid}}" 
                                  value="{{option.optid}}"             
@@ -29,7 +29,8 @@
                 </li>
                 <li class="no-bullets">
                     <div style="height: 30px;">
-                        <h5>{{que.userRadioSelected}}</h5>
+                        <input type="text" name="test1" readonly value="{{que.answerKey}}-{{que.userRadioSelected}}">
+                        <!-- <h5>{{que.answerKey}}, {{que.userRadioSelected}}</h5> -->
                     </div>
                 </li>
             </ul>

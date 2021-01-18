@@ -19,6 +19,8 @@ export class QuestionsHomeComponent implements OnInit {
 
   questionsList
 
+  //selectedAnswers: string[]
+
   //options: any = [];
   //option: any = [];
 
@@ -67,11 +69,30 @@ export class QuestionsHomeComponent implements OnInit {
 
   submitTest(data){
     //calculate test result & route + display in result component
-    console.log('Data entered in online test form : ', data)
-    //console.log('Data entered in online test form : ', JSON.stringify(data))
+    console.log('Data entered in online test form : ', data);
+   // let dataJson = JSON.stringify(data)
+
+   let correctCount = 0;
+
+   // console.log('questionsList size =  ', this.questionsList.length)
+    for (let queIdx=0; queIdx < this.questionsList.length; queIdx++){
+      let ansId = ""+(queIdx+1) + "a";
+      console.log('Data entered in online test form : ', data[ansId] ) ;//data[])
+
+      if(data[ansId] == this.questionsList[queIdx].answerKey){
+        correctCount += 1;
+      }
+      console.log('correctCount= : ', correctCount);
+      
+    }
+   // console.log('Data entered in online test form : ', JSON.stringify(data))
    // this.route.navigate(['/results'])
+
+   
   }
 
+ 
+    userRadioSelected : ""
 
 
 
