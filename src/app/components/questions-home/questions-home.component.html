@@ -6,7 +6,7 @@
         </div>
         <div style="margin: auto; width: 60%">
             <ul class="list-group" *ngFor="let que of questionsList; let queindex = index">
-                <li class="list-group-item">{{que.id}}. <strong>{{que.question}}</strong></li>
+                <li class="list-group-item" style="background-color: aqua;">{{que.id}}. <strong>{{que.question}}</strong></li>
                 <li class="list-group-item" *ngFor="let option of que.options; let optionindex = index">
                     <!-- <select id="quesoptions">
                         <option value="op.optid">({{op.optid}}) {{op.opt}}</option>
@@ -29,7 +29,7 @@
                 </li>
                 <li class="no-bullets">
                     <div style="height: 30px;">
-                        <input type="text" name="test1" readonly value="{{que.answerKey}}-{{que.userRadioSelected}}">
+                        <!-- <input type="text" name="test1" readonly value="{{que.answerKey}}-{{que.userRadioSelected}}"> -->
                         <!-- <h5>{{que.answerKey}}, {{que.userRadioSelected}}</h5> -->
                     </div>
                 </li>

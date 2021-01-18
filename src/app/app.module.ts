@@ -41,7 +41,10 @@ import { ReviewAnswersComponent } from './components/review-answers/review-answe
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
+    }), // ToastrModule added
   ],
   providers: [
     TestService

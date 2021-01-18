@@ -22,7 +22,7 @@ export class ReviewAnswersComponent implements OnInit {
   }
 
   goToHome(){
-    this.route.navigate(['/userHome'])
+    this.route.navigate(['/userhome'])
   }
 
   goBack(){
