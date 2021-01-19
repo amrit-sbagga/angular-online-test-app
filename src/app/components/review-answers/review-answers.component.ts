@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { TestService } from '../../services/test.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { TestService } from '../../services/test.service';
 export class ReviewAnswersComponent implements OnInit {
 
   questionsList
-  constructor(private testService : TestService, private route: Router) { }
+  submittedAnswers;
+  constructor(private testService : TestService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -19,14 +20,19 @@ export class ReviewAnswersComponent implements OnInit {
       this.questionsList = data;
       //loadQuestions(data))
     })
+
+    this.route.queryParams.subscribe(params => {
+      console.log("params received in review page = ", params);
+      this.submittedAnswers = params.submittedAnswers;
+    })
   }
 
   goToHome(){
-    this.route.navigate(['/userhome'])
+    this.router.navigate(['/userhome'])
   }
 
   goBack(){
-    this.route.navigate(['/results'])
+    this.router.navigate(['/results'])
   }
 
 }

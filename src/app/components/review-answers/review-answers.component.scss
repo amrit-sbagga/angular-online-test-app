@@ -3,3 +3,30 @@
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
   }
+
+  .blue{
+    background-color:blue;
+  
+  }
+  .red{
+    background-color:red
+  }
+
+  .green{
+    background-color:green
+  }
+
+  #wrapper {
+    display: flex;
+    height: 25px;
+    margin: auto; 
+    width: 60%;
+    text-align: center;
+  }
+  
+  #wrapper > div {
+    flex-grow: 1;
+  }
+  
+  #wrapper > div:first-of-type { background-color: green }
+  #wrapper > div:nth-of-type(2) { background-color: red }

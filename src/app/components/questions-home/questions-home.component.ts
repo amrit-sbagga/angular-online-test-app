@@ -72,7 +72,8 @@ export class QuestionsHomeComponent implements OnInit {
     console.log('Data entered in online test form : ', data);
    // let dataJson = JSON.stringify(data)
 
-   let correctCount = 0;
+    let correctCount = 0;
+    let submittedAnswers = [];
 
    // console.log('questionsList size =  ', this.questionsList.length)
     let totalQueCount = this.questionsList.length;
@@ -84,10 +85,10 @@ export class QuestionsHomeComponent implements OnInit {
         correctCount += 1;
       }
       console.log('correctCount= : ', correctCount);
-      
+      submittedAnswers.push(data[ansId])
     }
    // console.log('Data entered in online test form : ', JSON.stringify(data))
-     this.route.navigate(['/results'], { queryParams: {correctCount, totalQueCount}})
+     this.route.navigate(['/results'], { queryParams: {correctCount, totalQueCount, submittedAnswers}})
 
    
   }

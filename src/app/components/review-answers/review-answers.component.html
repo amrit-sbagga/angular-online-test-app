@@ -1,26 +1,36 @@
 <form #onlinetestForm="ngForm">
     <div style="margin-bottom: 20x;margin-top: 20px;">
-        
+        <div id="wrapper">
+            <div id="c1"><span><strong>Correct</strong></span></div>
+            <div id="c2"><span><strong>InCorrect</strong></span></div>
+        </div>
+        <br>
         <div style="margin: auto; width: 60%">
             <ul class="list-group" *ngFor="let que of questionsList; let queindex = index">
                 <li class="list-group-item">{{que.id}}. <strong>{{que.question}}</strong></li>
-                <li class="list-group-item" *ngFor="let option of que.options; let optionindex = index">
+                <li class="list-group-item" *ngFor="let option of que.options; let optionindex = index"
+                            [ngClass]="{
+                                        'green' : option.optid === que.answerKey, 
+                                        'red' : submittedAnswers[queindex] !== que.answerKey && submittedAnswers[queindex] === option.optid
+                                    }">
+                       <!-- [ngClass]="{'green' : submittedAnswers[queindex] === que.answerKey,
+                                    'blue' : option.optid === que.answerKey, 
+                                    'red' : submittedAnswers[queindex] !== que.answerKey}"> -->
                     <!-- <select id="quesoptions">
                         <option value="op.optid">({{op.optid}}) {{op.opt}}</option>
                        
                     </select> -->
+                    <!-- {{submittedAnswers[queindex]}} - {{option.optid}} -->
                     <div class="radio" style="margin-left: 10px;">  
                         <label> <!-- <label> [for]="queindex + optionindex">     -->
                             <!-- {{option.optid }} &nbsp;&nbsp; -->
-                            <input type="radio" required
+                            <input type="radio"
                                  name="{{que.id}}{{option.optid}}" 
                                  value="{{option.optid}}"
                                  disabled
                                  >
                             &nbsp;&nbsp;<em>{{option.opt}}</em>  
                         </label>  
-
-
                     </div>
                     <!-- <input type="radio" [value]="11">   {{op.opt}} -->
                 </li>
