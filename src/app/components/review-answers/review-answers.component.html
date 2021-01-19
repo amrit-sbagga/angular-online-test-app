@@ -7,11 +7,11 @@
         <br>
         <div style="margin: auto; width: 60%">
             <ul class="list-group" *ngFor="let que of questionsList; let queindex = index">
-                <li class="list-group-item">{{que.id}}. <strong>{{que.question}}</strong></li>
+                <li class="list-group-item" style="background-color: aqua;">{{que.id}}. <strong>{{que.question}}</strong></li>
                 <li class="list-group-item" *ngFor="let option of que.options; let optionindex = index"
                             [ngClass]="{
-                                        'green' : option.optid === que.answerKey, 
-                                        'red' : submittedAnswers[queindex] !== que.answerKey && submittedAnswers[queindex] === option.optid
+                                        'green-border' : option.optid === que.answerKey, 
+                                        'red-border' : submittedAnswers[queindex] !== que.answerKey && submittedAnswers[queindex] === option.optid
                                     }">
                        <!-- [ngClass]="{'green' : submittedAnswers[queindex] === que.answerKey,
                                     'blue' : option.optid === que.answerKey, 
