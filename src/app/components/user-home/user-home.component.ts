@@ -10,7 +10,16 @@ import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class UserHomeComponent implements OnInit {
 
-  closeResult = ''; 
+  closeResult = '';
+  testSubjects = [
+    "ANGULAR",
+    "NODEJS",
+    "MONGODB",
+    "REACTJS",
+    "PYTHON",
+    "AWS",
+    "AZURE"
+  ]
 
   constructor(private route : Router, private toastr: ToastrService, private modalService: NgbModal) { }
 
@@ -21,7 +30,7 @@ export class UserHomeComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => { 
       this.closeResult = `Closed with: ${result}`; 
       console.log(result)
-      if(result === "Save click"){
+      if(result === "Start"){
         console.log("navigate hereeee to exam....");
         this.route.navigate(['/questionshome']);
       }

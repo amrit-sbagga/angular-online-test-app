@@ -1,6 +1,6 @@
 <div style="margin: 30px;">
     <table class="table table-striped" style="width: 50%; margin: auto">
-        <thead>
+        <thead style="background-color:aqua">
           <tr>
             <th scope="col" style="width: 25%">#</th>
             <th scope="col" style="width: 35%">Subject</th>
@@ -8,44 +8,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>ANGULAR</td>
-            <td>
+          <tr *ngFor="let subject of testSubjects; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{subject}}</td>
+            <td *ngIf="subject==='ANGULAR'">
                <button class="btn btn-outline-primary mb-2 mr-2" (click)="open(content)">Enter Exam</button>
             </td>
+            <td *ngIf="subject !== 'ANGULAR'">
+              <button class="btn btn-outline-primary mb-2 mr-2" (click)="enterExam(subject)">Enter Exam</button>
+           </td>
             <!-- <td><button (click)="enterExam('ANGULAR')">Enter Exam</button></td> -->
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>NODEJS</td>
-            <td><button (click)="enterExam('NODEJS')">Enter Exam</button></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>MONGODB</td>
-            <td><button (click)="enterExam('MONGODB')">Enter Exam</button></td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>REACTJS</td>
-            <td><button (click)="enterExam('REACTJS')">Enter Exam</button></td>
-          </tr>
-          <tr>
-            <th scope="row">5</th>
-            <td>PYTHON</td>
-            <td><button (click)="enterExam('PYTHON')">Enter Exam</button></td>
-          </tr>
-          <tr>
-            <th scope="row">6</th>
-            <td>AWS</td>
-            <td><button (click)="enterExam('AWS')">Enter Exam</button></td>
-          </tr>
-          <tr>
-            <th scope="row">7</th>
-            <td>AZURE</td>
-            <td><button (click)="enterExam('AZURE')">Enter Exam</button></td>
-          </tr>
+          </tr>         
         </tbody>
     </table>
 
@@ -53,7 +26,7 @@
     <ng-template #content let-modal>
           <div class="modal-header"> 
             <h4 class="modal-title" id="modal-basic-title"> 
-                Online Test 
+                Angular Online Test 
             </h4> 
             <button type="button" class="close"
                     aria-label="Close" (click)= 
@@ -65,13 +38,19 @@
             </button> 
         </div> 
          <div class="modal-body"> 
-            <h3>body text here........</h3>
-            content
+            <h4><span style="color:blue"><em><u>Instructions</u></em></span></h4>
+             <ul>
+               <li class="glyphicon glyphicon-ok"><em>&nbsp;&nbsp;Test duration will be of <span style="color:blue"><b>10</b></span> minutes.</em></li>
+               <li class="glyphicon glyphicon-ok" style="color: black"><em>&nbsp;&nbsp;Test comprises of <span style="color:blue"><strong>10</strong></span> questions with multiple choice answer for each question.</em></li>
+               <li><em>&nbsp;&nbsp;Test will be auto submitted once the time gets lapsed.</em></li>
+               <li><em>&nbsp;&nbsp;When you are ready, click on 'start' button & you will be navigated to test screen.</em></li>
+               <li><em>&nbsp;&nbsp;Good Luck!</em></li>
+             </ul>
         </div>
           <div class="modal-footer"> 
             <button type="button" 
                 class="btn btn-outline-dark" 
-                (click)="modal.close('Save click')"> 
+                (click)="modal.close('Start')"> 
                 Start 
             </button> 
         </div>
