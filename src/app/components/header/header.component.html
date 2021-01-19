@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="">Online Test</a>
+      <a class="navbar-brand">Online Test</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,14 +17,15 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/profile" *ngIf="loggedIn">Profile</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/login" *ngIf="!loggedIn">Login</a>
-          </li>
+          </li> -->
           <li class="nav-item" *ngIf="!loggedIn">
             <a class="nav-link" routerLink="/signup">Signup</a>
           </li>
           <li class="nav-item" *ngIf="loggedIn">
-            <a class="nav-link" href="javascript:void(0);">Logout</a>
+            <!-- <a class="nav-link" href="javascript:void(0);">Logout</a> -->
+            <a class="nav-link" (click)=goToLogin()>Logout</a>
           </li>
         </ul>
         

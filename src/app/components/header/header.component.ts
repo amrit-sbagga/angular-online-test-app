@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TestService } from '../../services/test.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TestService } from '../../services/test.service';
 export class HeaderComponent implements OnInit {
 
   loggedIn = false;
-  constructor(private testService : TestService) {
+  constructor(private testService : TestService, private router: Router) {
     
    }
 
@@ -21,6 +22,12 @@ export class HeaderComponent implements OnInit {
     //localStorage.getItem("loggedIn") === "true"? true : false;
     //console.log("In header: loggedIn = ", this.loggedIn);
     
+  }
+
+  goToLogin(){
+    console.log("In header: logout clicked..!!");
+    this.testService.changeLoggedInStatus(false);
+    this.router.navigate(["/login"])
   }
 
 }
