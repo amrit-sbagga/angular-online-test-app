@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,12 @@ export class TestService {
       
     //   //loadQuestions(data))
     // })
+   }
+
+   public loggedInStatus = new BehaviorSubject(false);
+
+   changeLoggedInStatus(value : any){
+     this.loggedInStatus.next(value)
    }
 
    getJSON() : Observable<any> {

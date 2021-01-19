@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TestService } from 'src/app/services/test.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private testService : TestService) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   signin(event){
     let formValues = this.userForm.value;
-    console.log('Login Values = ', );
+    //console.log('Login Values = ', );
     
     if(formValues.username === "admin" && formValues.password){
       this.navigateToUserHome();
@@ -37,6 +38,8 @@ export class LoginComponent implements OnInit {
 
   navigateToUserHome(){
     this.route.navigate(['/userhome'])
+    //localStorage.setItem('loggedIn', "true");
+    this.testService.changeLoggedInStatus(true)
   }
 
 }

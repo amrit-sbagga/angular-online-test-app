@@ -21,6 +21,7 @@ import { UserHomeComponent } from './components/user-home/user-home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReviewAnswersComponent } from './components/review-answers/review-answers.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ResultComponent,
     TimerComponent,
     UserHomeComponent,
-    ReviewAnswersComponent
+    ReviewAnswersComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
