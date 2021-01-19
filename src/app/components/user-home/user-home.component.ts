@@ -55,7 +55,7 @@ export class UserHomeComponent implements OnInit {
     console.log("subject = ", subject);
 
     if(subject !== "ANGULAR"){
-      this.toastr.info('Test coming soon!!, meanwhile you can try online test on Angular. Good Luck!', '', {
+      this.toastr.info('Test coming soon... meanwhile you can try online test on Angular. Good Luck!', '', {
         timeOut: 4000
       });
       return;
