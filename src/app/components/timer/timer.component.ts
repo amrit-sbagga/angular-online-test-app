@@ -9,6 +9,9 @@ export class TimerComponent implements OnInit {
 
   constructor() { }
 
+  minutes = "10"
+  seconds = "00"
+
   ngOnInit(): void {
   }
 
