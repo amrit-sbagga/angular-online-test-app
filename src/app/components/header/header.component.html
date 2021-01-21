@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand">Online Test</a>
+<nav class="navbar navbar-expand-lg" style="background-color:rgb(243, 166, 176)">
+    <div class="container-fluid" >
+      <a class="navbar-brand" style="color:white">Online Test</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,17 +15,24 @@
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/profile" *ngIf="loggedIn">Profile</a>
+            <h6>
+            <a class="nav-link active" style="color:white" aria-current="page" routerLink="/profile" *ngIf="loggedIn">Profile</a>
+            </h6>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/login" *ngIf="!loggedIn">Login</a>
           </li> -->
           <li class="nav-item" *ngIf="!loggedIn">
-            <a class="nav-link" routerLink="/signup">Signup</a>
+            <h6>
+              <a class="nav-link" style="color:white" routerLink="/signup">Signup</a>
+            </h6>
+            
           </li>
           <li class="nav-item" *ngIf="loggedIn">
-            <!-- <a class="nav-link" href="javascript:void(0);">Logout</a> -->
-            <a class="nav-link" (click)=goToLogin()>Logout</a>
+            <h6>
+              <!-- <a class="nav-link" href="javascript:void(0);">Logout</a> -->
+              <a class="nav-link" style="color:white" (click)=goToLogin()>Logout</a>
+            </h6>
           </li>
         </ul>
         
