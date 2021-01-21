@@ -1,9 +1,9 @@
 <div class="text-center mt-4">
-    <form class="form-signin border rounded" [formGroup]="userForm" (ngSubmit)="signin($event)">
+    <form class="form-signin border rounded" style="background-color:rgb(120, 164, 245)" [formGroup]="userForm" (ngSubmit)="signin($event)">
 
       <!-- https://getbootstrap.com/docs/4.1/examples/sign-in/ -->
    
-        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <h1 class="h3 mb-3 font-weight-normal" style="color:white">Login</h1>
         
         <label for="inputUsername" class="sr-only">Username</label>
         <input type="text" id="inputUsername" class="form-control mb-3" placeholder="Enter your username" formControlName="username" required autofocus>
@@ -13,13 +13,14 @@
         <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Enter your Password" formControlName="password" required>
         
     
-        <div class="checkbox mb-3">
+        <div class="checkbox mb-3" style="color:white">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
     
-        <button class="btn btn-lg btn-primary btn-block border rounded" type="submit">Sign in</button>
+        <!-- <button class="btn btn-lg btn-primary btn-block border rounded" type="submit">Sign in</button> -->
+        <button class="btn btn-block border rounded" style="color:white;background-color: rgb(238, 159, 122);" type="submit">Sign in</button>
         
       </form>
 </div>
